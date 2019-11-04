@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+#top-block {
+}
+
+h1.header_logo {
+	cursor: pointer;
+}
+
+.header_side {
+	float: none;
+}
+/* start: デザインマージ調整のため無効化 */
+/*
+.header_side_inner {
+	padding: 17px 40px 0 0;
+}
+*/
+/* end: デザインマージ調整のため無効化 */
+.header_side_inner li{
+	margin-right: 2em;
+}
+
+.header_plan {
+	margin-right: 8em;
+}
+
+#side-block	{
+	background-color:#003d6b;
+}

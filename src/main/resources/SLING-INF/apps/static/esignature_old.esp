@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="imagetoolbar" content="no">
+<title>Home</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link
+	href="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/common.css"
+	rel="stylesheet" media="screen,print">
+<link
+	href="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/styles.css"
+	rel="stylesheet" media="screen,print">
+<link
+	href="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/styles-custom.css"
+	rel="stylesheet" media="screen,print">
+<link
+	href="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/modules.css"
+	rel="stylesheet" type="text/css" media="screen,print">
+<link
+	href="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/common_mod.css"
+	rel="stylesheet" media="screen,print">
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" 
+    href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/css/jquery.steps.css">
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/css/custom.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script
+     src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script 
+     src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap.min.js"></script>
+	
+<script
+	src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/js/step.js"></script>
+</head>
+
+<body>
+
+		<input type=hidden id="email" name="email"
+			value="<%=request.getRemoteUser()%>" /> <input type=hidden
+			id="contactsallfields" name="contactsallfields" />
+
+	<div id="wrap">
+		<div id="top-block">
+			<div class="top-inner">
+				<aside class="header_side">
+					<ul class="header_side_inner">
+						<li style="margin-right: 0em">
+							<dl class="header_plan">
+								<dt>Services</dt>
+								<dd class="plan_mitome">[e-sign]</dd>
+							</dl>
+						</li>
+						<li style="margin-right: 2em"></li>
+						<li style="margin-right: 2em">
+							<div class="news-box">
+								<p class="news-link">
+									<a class="news-btn" href="https://stin.gmo-agree.com/top/#"><img
+										src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/ico_alert.png"
+										alt="リマインド文書" width="18" height="18"></a>
+								</p>
+								<div class="news-list">
+									<div class="news-list-inner">
+										Reminder notification
+										<hr class="news-list-hr">
+										<ul></ul>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="margin-right: 2em">
+							<p class="help-link">
+								<a href="" target="_blank"><img
+									src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/ico_help.png"
+									title="Help Center" alt="Help Center" width="18" height="18"></a>
+							</p>
+						</li>
+						<li style="margin-right: 2em">
+							<div class="header_user" style="margin-top: 0.1em">
+								<figure class="header_user_icon">
+									<img
+										src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/ico_user02.png">
+								</figure>
+								<p class="header_user_name">
+									<a href="#">Vivek Tripathi</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<p class="btn logout">
+								<a href="#">Sign out</a>
+							</p>
+						</li>
+					</ul>
+				</aside>
+			</div>
+		</div>
+		<div id="side-block" class="menuToolTips"
+			style="background-color: #003d6b;">
+
+			<h1
+				style="cursor: pointer; font-size: 16px; font-weight: bold; padding-top: 16px; color: #003d6b;">
+				Doctiger Digital Signature</h1>
+			<p class="save">
+				<a data-toggle="tab" href="#documentsRegister"><img
+					src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/side-save.png"
+					width="29" height="24">Request Sign</a>
+			</p>
+
+			<ul id="menu">
+				<li class="menu1"><a href="#home" data-toggle="tab">Home</a></li>
+				<li class="menu4"><a href="#documents" data-toggle="tab">Documents</a></li>
+				<li class="menu10"><a href="#template" data-toggle="tab">Templates</a></li>
+				<li class="menu6"><a href="#members" data-toggle="tab">Users</a></li>
+				<li class="menu5"><a href="#operationLogs" data-toggle="tab">Operation
+						log</a></li>
+				<li class="menu11"><a href="#documentsCustomize"
+					data-toggle="tab">Item settings</a></li>
+			</ul>
+			<ul class="sub">
+				<li><a href="#" target="_blank">Privacy Policy</a></li>
+				<li><a href="#" target="_blank">Terms of use</a></li>
+				<li><a href="#" target="_blank">Help Center</a></li>
+				<li><a href="#" target="_blank">Inquiry</a></li>
+			</ul>
+		</div>
+
+		<div id="contents-block">
+			<div class="tab-content">
+				<div id="home" class="tab-pane active">
+					<div class="data-box fcb" style="margin-bottom: 0px;">
+						<div class="data-d">
+							<div class="data-m" id="summaryDocumentStatusCounts"
+								style="zoom: 1;">
+								<div id="summaryDocumentStatusCountsContents" style="">
+									<h3 class="head-mini">
+										<img
+											src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/ico_status.png">Unsigned
+									</h3>
+									<div class="data-lr fcb">
+										<canvas id="bar-chart" height="140" width="270"
+											style="width: 270px; height: 140px;"></canvas>
+										<dl class="fl">
+											<dt class="state1">Unsigned(You)</dt>
+											<dd>
+												<span id="documentsStatusCountOwn">0</span>
+											</dd>
+										</dl>
+										<dl class="fr">
+											<dt class="state2">Unsigned(Others)</dt>
+											<dd>
+												<span id="documentsStatusCountPartner">0</span>
+											</dd>
+										</dl>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="data-d">
+							<div class="data-m" id="summaryDocumentCounts" style="zoom: 1;">
+								<div id="summaryDocumentCountsContents" style="">
+									<h3 class="head-mini">
+										<img
+											src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/ico_monthly.png">completed
+									</h3>
+									<div class="main_strage_inner x2">
+										<ul>
+											<li style="position: relative; top: -22px;">
+												<h3 id="zituin_strage_num"
+													style="position: relative; bottom: -3px; /* left: 120%; width: 45px; */ width: 400%; display: block; text-align: center; margin-bottom: 5px">digital
+													sign</h3>
+												<canvas id="doughnut-chart01" height="140" width="168"
+													style="width: 168px; height: 140px;"></canvas>
+											</li>
+											<li class="strage_num"><p class="strage_num_top">
+													<span id="registeredSealCount">0</span>
+												</p>
+												<p class="strage_num_bottom">
+													<span id="registeredSealMaxCount">30</span>
+												</p></li>
+										</ul>
+										<ul>
+											<li style="position: relative; top: -22px;">
+												<h3 id="mitomein_strage_num"
+													style="position: relative; bottom: -3px; /* left: 120%; width: 45px; */ width: 400%; display: block; text-align: center; margin-bottom: 5px">e-sign</h3>
+												<canvas id="doughnut-chart02" height="140" width="168"
+													style="width: 168px; height: 140px;"></canvas>
+											</li>
+											<li class="strage_num"><p class="strage_num_top">
+													<span id="privateSealCount">0</span>
+												</p>
+												<p class="strage_num_bottom">
+													<span id="privateSealMaxCount">∞</span>
+												</p></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="data-d">
+							<div class="data-m" id="summaryDiskUsage" style="zoom: 1;">
+								<div id="documentStorageContents" style="">
+									<h3 class="head-mini">
+										<img
+											src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/Home/ico_strage.png">Stored
+									</h3>
+									<div class="main_strage_inner">
+										<ul>
+											<li><canvas id="doughnut-chart03" height="150"
+													width="180" style="width: 180px; height: 150px;"></canvas></li>
+											<li class="strage_num"><p class="strage_num_top">
+													<span id="graph-data">0</span>
+												</p>
+												<p class="strage_num_bottom">
+													<span id="graph-size">100</span>
+												</p></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="data-l">
+					<div class="search-box fcb">
+						<h2 class="head-big fl">Latest document</h2>
+					</div>
+					<div class="row">
+						<div class="col-md-12" style="padding: 20px 35px;">
+							<table cellpadding="0" class="table" cellspacing="0" border="0" id="list-all" style="table-layout: fixed;overflow: hidden;">
+								
+							</table>
+							<!-- <p class="noresult">There is no corresponding document.</p> -->
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div id="documentsRegister" class="tab-pane">
+					<div class="data-l">
+						<h2 class="head-big2">Request Sign</h2>
+						<div class="row">
+							<div class="col-md-12">
+								<div id="wizard">
+									<h2>Upload documents</h2>
+									<section>
+									
+									<div class="col-md-3">
+                                             <select class="form-control working-group-DropdownClass" id="working-group-Dropdown-idDrop">
+                                            
+                                             </select>
+                                             </div>
+									
+									
+										<p class="bp30">Please upload your document and click on
+											the Next button.</p>
+										<div id="validMessageArea"></div>
+										<div class="bp30" style="display: none">
+											<div class="caveat c4">
+												<p></p>
+											</div>
+										</div>
+										<div id="drag-area" class="up-file-section">
+											<p class="filedrop"></p>
+											<p>Drop your file to upload</p>
+											<p>Or</p>
+											<div class="colmd-12 text-center">
+												<div class="upload-btn-wrapper">
+													<button class="btn btn-primary">Browse</button>
+													<input type="file" name="myfile" id="fileUploadDocuments" />
+												</div>
+
+												<p id="filenameId"></p>
+												<p id="successUploadFileId"></p>
+
+
+											</div>
+											<br>
+											<p style="font-size: 13px; padding: 1px;">
+												* Documents to be uploaded must be PDF, Word, Excel files
+												without any protection or password, and up to 20MB in total.<br>
+												(It may take some time to convert file into PDF or the
+												format may be broken if you upload Word or Excel files)
+											</p>
+										</div>
+									</section>
+
+									<h2>Input information</h2>
+									<section class="input-information">
+										<div class="container-fluid">
+											<div class="row">
+												<div class="col-md-12 hed-text">
+													<p>Please input information ,and click on the Next
+														button</p>
+													<p>
+														<span class="text-danger">Red Frame</span> is required
+														item.
+													</p>
+												</div>
+												<div class="col-md-12 hedding-one">
+													<h4>Document Information</h4>
+												</div>
+												<div class="col-md-12">
+													<form class="form-horizontal">
+														<div class="row">
+															<div class="col-md-11 col-md-offset-1">
+																<div class="form-group">
+																	<label class="control-label col-md-2">Document
+																		Name</label>
+																	<div class="col-md-10">
+																		<input type="text" class="form-control"
+																			id="documentname">
+																	</div>
+																</div>
+															</div>
+														</div>
+														<!-- <div class="row">
+						                   				<div class="col-md-5 col-md-offset-2">
+						                   					<div class="form-group">
+															    <label class="control-label col-md-2" for="email">Ou</label>
+															    <div class="col-md-10">
+															      <input type="text" class="form-control required">
+															    </div>
+															</div>
+						                   				</div>
+						                   				  <div class="col-md-5">
+						                   					<div class="form-group">
+															    <label class="control-label col-md-2" for="email">Attention</label>
+															    <div class="col-md-10">
+															      <input type="text" class="form-control">
+															    </div>
+															</div>
+						                   				</div>
+						                   			</div>-->
+														<hr>
+														<!--  <h4>Various Settings</h4>
+						                   			<div class="row">
+						                   				<div class="col-md-11 col-md-offset-1">
+									                   		<div class="form-group">
+															    <label class="control-label col-md-2">Folder</label>
+															    <div class="col-md-10 p-0">
+															      <select class="form-control">
+															      		<option>Not Selected</option>
+															      </select>
+															    </div>
+															</div>
+						                   				</div>
+						                   			</div>
+						                   			<div class="row">
+						                   				<div class="col-md-12 text-right">
+						                   					<button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+						                   				</div>
+						                   			</div>
+						                   			<div class="row">
+						                   				<div class="col-md-11 col-md-offset-1">
+									                   		
+															    <label class="control-label col-md-2">Ckeck Sign order</label>
+															    <div class="col-md-10 mt-7 text-left">
+															    	<input type="checkbox" name=""> setting sign order
+															    </div>
+															
+						                   				</div>
+						                   			</div>
+						                   			<div class="row">
+						                   				<div class="col-md-11">
+									                   		<div class="form-group">
+															    <label class="control-label col-md-3 text-right"><p style="position: relative;left:60px;">Company's Workflow</p></label>
+															    <div class="col-md-9 p-0 mt-7" style="padding-left: 33px;">
+															    	<input type="checkbox" class="companys-set-up" value="companys-set-up" style="padding-right:10px;"> set up
+															    </div>
+															</div>
+						                   				</div>
+						                   			</div>
+						                   			<div class="row approver-section" style="display: none;">
+						                   				<div class="col-md-11 col-md-offset-1">
+									                   		<div class="form-group">
+															    <label class="control-label col-md-2">Approver 1</label>
+															    <div class="col-md-3">
+															      <input type="text" class="form-control" placeholder="organizational us">
+															    </div>
+															    <div class="col-md-3">
+															      <input type="text" class="form-control" placeholder="contact person">
+															    </div>
+															    <div class="col-md-1">
+															    	<button class="btn btn-danger"><i class="fa fa-plus" aria-hidden="true"></i></button>
+															    </div>
+															    <div class="col-md-6 col-md-offset-2" style="margin-top: 7px;">
+															      <input type="text" class="form-control" placeholder="Email address">
+															    </div>
+								                   				<div class="col-md-9 text-right">
+								                   					<button class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+								                   				</div>
+															</div>
+						                   				</div>
+						                   			</div>
+						                   			<div class="row">
+						                   				<div class="col-md-11 col-md-offset-1">
+									                   		<div class="form-group">
+															    <label class="control-label col-md-2">Signature Type</label>
+															    <div class="col-md-3 mt-7">
+															     	 <input type="radio" name="sign" style="display: inline;padding-left:20px;"> digital Sign
+															    </div>
+															     <div class="col-md-3 mt-7">
+															     	 <input type="radio" name="sign" style="display: inline;"> e-sign
+															    </div>
+															</div>
+						                   				</div>
+						                   			</div>
+						                   			<hr>-->
+																												<div class="receiver-section-copy" style="display: none;">
+															<div class="copy-from-section">
+																<div class="row">
+																	<div class="col-md-12 text-right">
+																		<button class="btn btn-danger delete-receiver-from"
+																			type="button">
+																			<i class="fa fa-trash" aria-hidden="true"></i> Delete
+																		</button>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-12">
+																		<div class="form-group">
+																			<label class="control-label col-md-3">Access
+																				Code <span class="text-info"><i
+																					class="fa fa-question-circle" aria-hidden="true"></i></span>
+																			</label>
+																			<div class="col-md-2 p-0 mt-7">
+																				<input type="checkbox" class="access-code-set-up"
+																					value="access-code-set-up" name="accessCodeSetUp"> set up
+																			</div>
+																			<div class="col-md-4 withen-40-byte-characters"
+																				style="margin-left: -90px; display: none;">
+																				<input type="text" name="accessCode"
+																					class="form-control" name=""
+																					placeholder="Withen 40 byte characters">
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-7">
+																		<div class="form-group">
+																			<label class="control-label col-md-5" for="email">Name
+																				(Company/indivadual)</label>
+																			<div class="col-md-6">
+																				<input type="text" name="company"
+																					class="form-control">
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-11 col-md-offset-1">
+																		<div class="form-group">
+																			<label class="control-label col-md-2">E-mail
+																				address</label>
+																			<div class="col-md-10" style="padding-left: 22px;">
+																				<input type="text" name="emailId"
+																					class="form-control">
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="row">
+																	<div class="col-md-11 col-md-offset-1">
+																		<div class="form-group">
+																			<label class="control-label col-md-2">Note</label>
+																			<div class="col-md-10" style="padding-left: 22px;">
+																				<textarea name="comments" class="form-control"></textarea>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="receiver-section">
+															<div class="row">
+																<div class="col-md-12 text-right">
+																	<button class="btn btn-primary add-form-receiver"
+																		type="button">
+																		<i class="fa fa-plus" aria-hidden="true"></i> Add
+																	</button>
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<label class="control-label col-md-3">Access
+																			Code <span class="text-info"><i
+																				class="fa fa-question-circle" aria-hidden="true"></i></span>
+																		</label>
+																		<div class="col-md-2 p-0 mt-7">
+																			<input type="checkbox" class="access-code-set-up"
+																				value="access-code-set-up" name="accessCodeSetUp"> set up
+																		</div>
+																		<div class="col-md-4 withen-40-byte-characters"
+																			style="margin-left: -90px; display: none;">
+																			<input type="text" name="accessCode"
+																				class="form-control" name=""
+																				placeholder="Withen 40 byte characters">
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-md-7">
+																	<div class="form-group">
+																		<label class="control-label col-md-5" for="email">Name
+																			(Company/indivadual)</label>
+																		<div class="col-md-6">
+																			<input type="text" name="company"
+																				class="form-control">
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-md-11 col-md-offset-1">
+																	<div class="form-group">
+																		<label class="control-label col-md-2">E-mail
+																			address</label>
+																		<div class="col-md-10" style="padding-left: 22px;">
+																			<input type="text" name="emailId"
+																				class="form-control">
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-md-11 col-md-offset-1">
+																	<div class="form-group">
+																		<label class="control-label col-md-2">Note</label>
+																		<div class="col-md-10" style="padding-left: 22px;">
+																			<textarea name="comments" class="form-control"></textarea>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+
+
+														<div class="append-receiver-section"></div>
+
+													</form>
+												</div>
+											</div>
+										</div>
+									</section>
+
+									<h2>Set signature position</h2>
+									<section>
+										<!-- <p>Set signature position</p> -->
+
+										<iframe id="myFrame" style="height: 700px; width: 100%;"
+											src="http://uk.bluealgo.com:8082/portal/servlet/service/sigstandlone"
+											frameborder="0" scrolling="no"></iframe>
+											
+											<br>
+											<br>
+											
+											<p id="signerPosIdError"></p>
+
+									</section>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div id="documents" class="tab-pane">documents</div>
+				<div id="template" class="tab-pane">template</div>
+				<div id="members" class="tab-pane">members</div>
+				<div id="operationLogs" class="tab-pane">operation Logs</div>
+				<div id="documentsCustomize" class="tab-pane">documents
+					Customize</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="<%=request.getContextPath()%>/apps/EsignatureModuleCSSAndJS/js/custom.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#wizard").steps({
+				headerTag : "h2",
+				bodyTag : "section",
+				transitionEffect : "slideLeft",
+
+				onStepChanged : function(event, currentIndex, priorIndex) {
+					//alert(currentIndex);
+
+					if (currentIndex == 1) {
+
+						console.log("uploadedFileJson: 1 :: " + JSON.stringify(mainJson));
+						
+					}
+
+					if (currentIndex == 2) {
+						
+						var documentname = document.getElementById("documentname").value;
+						var emailId = document.getElementsByName("emailId");
+						var accessCode = document.getElementsByName("accessCode");
+						var accessCodeSetUp = document.getElementsByName("accessCodeSetUp");
+						var company = document.getElementsByName("company");
+						var comments = document.getElementsByName("comments");
+						var signerArr = [];
+						for(var i=1;i<emailId.length;i++){
+							var signerJson = {};
+							signerJson["emailid"] = emailId[i].value;
+							signerJson["companyanme"] = company[i].value;
+							signerJson["note"] = comments[i].value;
+							if(accessCodeSetUp[i].checked){
+								signerJson["accesscode"] = accessCode[i].value;
+							}else{
+								signerJson["accesscode"] = "";
+							}
+							signerArr.push(signerJson);
+							//signerJson["emailid"]
+						}
+						mainJson["DocumentName"] = documentname;
+						mainJson["signerdata"] = signerArr;
+						console.log("uploadedFileJson: 2 :: " + JSON.stringify(mainJson));
+						// Send a message to the child iframe
+						var iframeEl = document.getElementById('myFrame');
+						//alert(imageJson);
+						iframeEl.contentWindow.postMessage(imageJson, '*');
+
+					}
+
+				},
+				onFinished : function(event, currentIndex) {
+					//alert(event + ":" + currentIndex);
+					var ifrm = document.getElementById('myFrame').contentWindow;
+					//var win = ifrm.contentWindow; // reference to iframe's window
+					//var doc = ifrm.contentDocument? ifrm.contentDocument: ifrm.contentWindow.document;
+					//var form = ifrm.document.getElementById('twofactor');
+					ifrm.document.getElementById("submitButton").click();
+					var signerPos = ifrm.document.getElementById("posArr").value;
+					
+					console.log("signerPos: "+signerPos);
+					
+					if( !isEmpty(signerPos) ){
+						
+						mainJson["signpositionData"] = JSON.parse(signerPos);
+						console.log("uploadedFileJson: 3 :: " + JSON.stringify(mainJson));
+						//alert(JSON.stringify(signerPos));
+						
+						callServletSaveData(mainJson);
+					}else{
+						$('#signerPosIdError').css('color','red');
+						document.getElementById("signerPosIdError").innerHTML = "Please Select Signer Position Using Drag & Drop Block";
+						document.getElementById("signerPosIdError").style.textAlign = "center";
+					}
+					
+				}
+
+			});
+		});
+		
+		
+		//$(document).ready(function() {
+		//    $('#list-all').DataTable();
+		//} );
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+.input-information p{
+    padding:0px; 
+}
+.input-information input[type=checkbox]{
+	width: 18px;
+	height: 18px;
+	margin-top: 10px;
+}
+.input-information input[type=radio]{
+	width: 18px;
+	height: 18px;
+	display: inline-block !important;
+	margin-top: 5px;
+}
+.input-information .label-primary{
+	padding: 5px;
+	margin: 10px 0px;
+}
+.input-information .btn-divander{
+	border-bottom: 1px dashed #d2d2d2;
+	padding-bottom: 10px;
+}
+.p-0{
+	padding: 0px !important;
+}

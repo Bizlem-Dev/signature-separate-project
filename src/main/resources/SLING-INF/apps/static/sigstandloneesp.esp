@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://stin.gmo-agree.com/documents/registerPosition -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="imagetoolbar" content="no">
+<title>E-SIGNATURE</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/common.css" rel="stylesheet" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/styles.css" rel="stylesheet" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/styles-custom.css" rel="stylesheet" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/modules.css" rel="stylesheet" type="text/css" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/print.css" rel="stylesheet" type="text/css" media="print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/jquery-ui.css" rel="stylesheet" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/jquery-ui.structure.css" rel="stylesheet" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/jquery-ui.theme.css" rel="stylesheet" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/loading.css" rel="stylesheet" media="screen,print">
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/fontawesome-all.css" rel="stylesheet" media="screen,print">
+
+<link href="<%=request.getContextPath()%>/apps/standlonesig/css/common_mod.css" rel="stylesheet" media="screen,print">
+
+<script>
+	var baseUrl = "/";
+</script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/jquery.js"></script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/jquery-ui.min.js"></script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/datepicker-ja.js"></script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/jquery-blockUI.js"></script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/javascript.js"></script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/common.js"></script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/Chart.js"></script>
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/jquery.heightLine.js"></script>
+
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/jquery.tablesorter.min.js"></script>
+
+
+</head>
+<body>
+
+<div id="wrap">
+	<!-- <div id="load"></div> -->
+
+		<div id="contents-block">
+
+<script src="<%=request.getContextPath()%>/apps/standlonesig/js/documents.js"></script>
+
+<div class="data-l">
+
+ <h2 class="head-big2">
+	Set signature position
+</h2>
+
+<!--  <p class="bp30">
+<input type="radio" name="type" value="Manual"> <strong>Manual</strong>
+<input style = "margin-left:8%" type="radio" name="type" value="Automatic"> <strong>Automatic</strong>
+
+<input type="text" style="border:none" id="errorTypeId" size="31" style="display: none;" style = "margin-left:12%"/>
+
+</p> 
+
+
+<p class="bp30">
+<input type="checkbox" name="twofactor" id="twofactor"> <strong>2 Factor Authentication</strong>
+</p>-->
+
+<input type="hidden" name="" id="posArr" value="" />
+
+<form name="documentsActionForm" method="POST" action="https://stin.gmo-agree.com/documents/registerComplete">
+
+<div id="seal-stamp">
+	<ul class="seal-list">
+			<li>
+				<div class="seal-drag bgcolorPartnerSigner0">
+					<input type="hidden" id="partnerSignerField_num_0" name="partnerSignerField_num_0" value="0">
+					<input type="hidden" id="partnerSignerFreeText_num_0" name="partnerSignerFreeText_num_0" value="0">
+					<input type="hidden" id="partnerSignerCheckBox_num_0" name="partnerSignerCheck_num_0" value="0">
+					<div id="partnerSignerField_0" class="seal-drag-stamp-div bgcolorPartnerSigner0 ui-draggable ui-draggable-handle">
+						<dl>
+							<dt>Drag & Drop Signature Block</dt>
+							<dd></dd>
+						</dl>
+						<input id="partnerSignerField_x1_0" type="hidden" name="partnerSignerFieldInfoList[0].signFieldList.x1" value="">
+						<input id="partnerSignerField_y1_0" type="hidden" name="partnerSignerFieldInfoList[0].signFieldList.y1" value="">
+						<input id="partnerSignerField_x2_0" type="hidden" name="partnerSignerFieldInfoList[0].signFieldList.x2" value="">
+						<input id="partnerSignerField_y2_0" type="hidden" name="partnerSignerFieldInfoList[0].signFieldList.y2" value="">
+						<input id="partnerSignerField_page_0" type="hidden" name="partnerSignerFieldInfoList[0].signFieldList.pageNumber" value="">
+						<div style="display:none" class="fieldMenuCommon stampFieldMenu">
+							<div class="fieldMenuBodyCommon">
+								
+							</div>
+						</div>
+						<img class="removeSign" src="<%=request.getContextPath()%>/apps/standlonesig/img/remove.png" style="display: none;">
+					</div>
+					
+				</div>
+			</li>
+	</ul>
+	<div class="stamp-area ui-droppable" id="imageLoadId">
+	<%-- 
+		<br>1/3pages<br>
+		
+		<div id="pdfArea1">
+			
+			<div id="pdfImage1Loading" style="background: rgb(221, 221, 221); display: none;">
+				<img src="<%=request.getContextPath()%>/apps/standlonesig/img/loading.gif"><br>
+				Loading ...<br>
+			</div>
+			
+			<div id="pdfImage1Loaded" style="">
+				<img class="pdfImage" id="pdfImage1" alt="" src="<%=request.getContextPath()%>/apps/standlonesig/img/pdftoimagesaved/T_and_CArbitration_1.png" data-state="loaded" style="border: 1px solid black; width: 100%;">
+			</div>
+		</div>
+	
+		<br>2/3pages<br>
+		
+		<div id="pdfArea2">
+			
+			<div id="pdfImage2Loading" style="background: rgb(221, 221, 221); display: none;">
+				<img src="<%=request.getContextPath()%>/apps/standlonesig/img/loading.gif"><br>
+				Loading ...<br>
+			</div>
+			
+			<div id="pdfImage2Loaded" style="">
+				<img class="pdfImage" id="pdfImage2" alt="" src="<%=request.getContextPath()%>/apps/standlonesig/img/pdftoimagesaved/T_and_CArbitration_2.png" data-state="loaded" style="border: 1px solid black; width: 100%;">
+			</div>
+		</div>
+	
+		<br>3/3pages<br>
+		
+		<div id="pdfArea3">
+			
+			<div id="pdfImage3Loading" style="background: rgb(221, 221, 221); display: none;">
+				<img src="<%=request.getContextPath()%>/apps/standlonesig/img/loading.gif"><br>
+				Loading ...<br>
+			</div>
+			
+			<div id="pdfImage3Loaded" style="">
+				<img class="pdfImage" id="pdfImage3" alt="" src="<%=request.getContextPath()%>/apps/standlonesig/img/pdftoimagesaved/T_and_CArbitration_3.png" data-state="loaded" style="border: 1px solid black; width: 100%;">
+			</div>
+		</div> --%>
+	
+	</div>
+
+	<input type="hidden" id="imgWidth" name="imgWidth" value="3168">
+	<input type="hidden" id="imgHeight" name="imgHeight" value="2448">
+</div>
+
+ <p class="edit-btn" style="display:none">
+	<input type="button" id="back" value="Cancel" class="cancel">
+	
+		<input id="submitButton" type="button" value="Save" disabled="">
+</p>
+
+<p style="text-align: center;"><span id="SuceessShowId"></span></p>
+
+<input id="imageUrl" type="hidden" value="/documents/preview/0?fileType=png&amp;fileName=201909201902537382742881935316397534&amp;pageNumber=">
+<input type="hidden" name="templateDocumentId" value="">
+</form>
+	<form name="documentsActionForm" id="bulkRegist" method="POST" action="https://stin.gmo-agree.com/documents/">
+	</form>
+	<form name="documentsActionForm" id="toIndex" method="post" action="https://stin.gmo-agree.com/documents/">
+		<input type="hidden" name="isBulkSendProcessing" id="isBulkSendProcessing" value="">
+	</form>
+
+
+</div>
+
+		</div>
+
+<div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+
+<script type="text/javascript">
+
+function IsJsonString(str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
+
+var pageCount = 0;
+
+//var myVar = setInterval(myTimer, 1000);
+
+function myTimer(dataJson) {
+//console.log("session: "+localStorage.getItem("dataJson"));
+	if (dataJson.hasOwnProperty("imageArray") != null) {
+		
+		var data=dataJson.imageArray;
+		console.log("sessionData: "+data);
+		 var dataArr = JSON.parse(data);
+		 if(dataArr.length>0){
+			 /** $('#load').css("visibility", "visible");*/
+			 pageCount = dataArr.length;
+			 var allMultipleLink="";
+			 for(var i=0;i<dataArr.length;i++){
+				 
+				 var filePathplusfilename="";
+				 if ( dataArr[i].hasOwnProperty("filePathplusfilename") ) {
+					 filePathplusfilename=dataArr[i].filePathplusfilename;
+					 console.log("filePathplusfilename: "+filePathplusfilename);
+		       	 }
+				 var pageNo=0;
+				 var pagenoNew=0;
+				 if ( dataArr[i].hasOwnProperty("pageNo") ) {
+					  pageNo=dataArr[i].pageNo;
+					  console.log("pageNo: "+pageNo);
+					   pagenoNew=pageNo+1;
+					  console.log("pageNo+1: "+pagenoNew);
+		       	 }
+				 
+				 allMultipleLink= allMultipleLink+'<br>'+pagenoNew+'/'+dataArr.length+'pages<br><div id="pdfArea'+pagenoNew+'"><div id="pdfImage'+pagenoNew+'Loading" style="background: rgb(221, 221, 221); display: none;"><img src="/portal/apps/standlonesig/img/loading.gif"><br>Loading ...<br></div><div id="pdfImage'+pagenoNew+'Loaded" style=""><img class="pdfImage" id="pdfImage'+pagenoNew+'" alt="" src="'+filePathplusfilename+'" data-state="loaded" style="border: 1px solid black; width: 100%;"></div></div>';
+				 
+				 
+			 } // for close
+			 
+			 fieldArray = {
+						"fillText_": new Documents("fillText_", pageCount, 1, -1, 0, 6),
+						"fillCheckBox_": new Documents("fillCheckBox_", pageCount, 1, -1, 0, 0),
+						"fillLabel_": new Documents("fillLabel_", pageCount, 1, -1, 0, 6),
+						
+						
+						"partnerSignerField_": new Documents("partnerSignerField_", pageCount, 1, 1, 1, 0),
+						"partnerSignerFreeText_": new Documents("partnerSignerFreeText_", pageCount, 1, -1, 0, 10),
+						"partnerSignerCheckBox_": new Documents("partnerSignerCheckBox_", pageCount, 1, -1, 0, 0),
+						
+					};
+			 
+			// PDF画像
+				var pdfImages = $(".pdfImage");
+				// プログレスバー
+				var pdfImagesAllCount = pdfImages.length;
+				var pdfImagesLoadedCount = 0;
+				var pdfImageProgressbar = $("#pdfImageProgressbar").progressbar({
+					value: pdfImagesLoadedCount,
+					max: pdfImagesAllCount
+				});
+				var pdfImagePercent = $("#pdfImagePercent");
+				// 署名位置設定用画像のハンドリング
+				var loadPdfImage = function(pdfImage) {
+					if (pdfImagesLoadingTimedOut) {
+						return;
+					}
+					var state = pdfImage.attr("data-state");
+					if (state == "loaded") {
+						return;
+					}
+					var timeout = (state == "loading") ? 3000 : 100;
+					pdfImage.attr("onerror", null);
+					pdfImage.attr("data-state", "loading");
+					setTimeout(function () {
+						if (pdfImage.attr("data-state") == "loaded") {
+							return;
+						}
+						var imageUri = pdfImage.attr("data-src") + "&t=" + Date.now();
+						pdfImage.attr("src", imageUri);
+						//console.log("try to get image: uri=" + imageUri);
+					}, timeout);
+				};
+				pdfImages.load(function() {
+					if (pdfImagesLoadingTimedOut) {
+						return;
+					}
+					// display
+					var pdfImage = $(this);
+					var state = pdfImage.attr("data-state");
+					if (state == "loaded") {
+						return;
+					}
+					var pdfImageId = pdfImage.attr("id");
+					pdfImage.attr("data-state", "loaded");
+					$("#" + pdfImageId + "Loading").hide();
+					$("#" + pdfImageId + "Loaded").show();
+					// setWidth
+					if (pdfImageId == "pdfImage1") {
+						setPdfImagesWidth();
+						//console.log("set image width");
+
+						const imgUrl = $('#imageUrl').val() + '1';
+						const JudgmentImg = new Image();
+						JudgmentImg.addEventListener("load", function() {
+							$('#imgWidth').val(JudgmentImg.width);
+							$('#imgHeight').val(JudgmentImg.height);
+						});
+						JudgmentImg.src = imgUrl;
+					}
+					// progress
+					pdfImageProgressbar.progressbar("value", ++pdfImagesLoadedCount);
+					var ratio = pdfImagesLoadedCount / pdfImagesAllCount;
+					var percent = Math.min(Math.ceil(ratio * 100), 100);
+					pdfImagePercent.text(percent + "%")
+					if (pdfImagesLoadedCount >= pdfImagesAllCount) {
+						pdfImageProgressbar.fadeOut();
+						$("#progressbarMessage").fadeOut();
+
+						// 全ページのイメージロード後に署名フィールドの位置を調整する
+						const pagePngData = new Image();
+						pagePngData.onload = function() {
+							setTimeout(function(){
+								/**/
+								$('.stamp-area').scrollLeft(0);
+								$('.stamp-area').scrollTop(0);
+
+								moveSignFieldsDbToEditPosition($('.stamp-area'), 'pdfImage', $('#signFields'), pagePngData.width, pagePngData.height);
+								checkSignFieldsLimitOver($('#seal-stamp .seal-list'));
+								$('#signFields').remove();
+
+								// 「送信」ボタンの状態を調整する
+								let checkResult = true;
+								$.each(fieldArray, function(key, value) {
+									if (!value.checkPosition(true)) {
+										checkResult = false;
+									}
+								});
+								enableSubmintButton(checkResult);
+							}, 0);
+						};
+						pagePngData.src = $('#pdfImage1').attr('src');
+					}
+					//console.log("got image: uri=" + pdfImage.attr("src"));
+				}).error(function() {
+					loadPdfImage($(this));
+				}).each(function() {
+					loadPdfImage($(this));
+				});
+
+			 
+			 document.getElementById("imageLoadId").innerHTML = allMultipleLink;
+			 /**$('#load').css("visibility", "hidden");*/
+			//sessionStorage.removeItem('dataJson');
+		 } // length check
+	
+		} // session check close here
+	
+	}
+
+
+function myStopFunction() {
+	clearInterval(myVar);
+	}
+
+
+	var isBulkRequestSign = false;
+
+	//PDFページ数
+	
+	//サインフィールド数
+	//var fieldCount = 1 +  0 - 0;
+// 	var fieldCount = 1 + 0;
+	//文書オブジェクト生成
+// 	var doc = new Documents(pageCount, fieldCount);
+
+	
+
+	//ページ読み込みのタイムアウト判定用
+	var pdfImagesLoadingTimedOut = false;
+
+	function checkPdfImagesLoaded() {
+		var checkResult = true;
+		$(".pdfImage").each(function(index, elem) {
+			var state = $(elem).attr("data-state");
+			if (state != "loaded") {
+				checkResult = false;
+				return false;
+			}
+		});
+		return checkResult;
+	}
+
+	/**
+	 * documents.js - isPdfImagesLoaded 実装
+	 */
+	function isPdfImagesLoaded() {
+		if (pdfImagesLoadingTimedOut) {
+			alert('Processing was interrupted because it took too long to load the page. Please go back to the previous screen and try again.');
+			return false;
+		}
+		if (!checkPdfImagesLoaded()) {
+			alert('Please wait for a while until all the pages are loaded. In order to set the signature position correctly, we appreciate your cooperation.');
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * documents.js - enableSubmitButton 実装
+	 */
+	function enableSubmintButton(isEnable) {
+		$("#submitButton").prop("disabled", (isEnable == false)? true : false);
+	}
+
+	/***/
+	function inputCheckFillTextFields() {
+		const fillTextNum = $('#fillText_num_0').val();
+		if (fillTextNum && fillTextNum > 0) {
+			for (let fi = 0; fi < fillTextNum; fi++) {
+				const fillTextArea = $('#fillText_comment_0_' + fi);
+				if (fillTextArea.get(0)) {
+					if (fillTextArea.val().trim() == "") {
+						//
+						alert("fill fileld is empty.");
+						fillTextArea.focus();
+						return false;
+					} else if(isContainsSurrogatePair(fillTextArea.val())) {
+						//
+						alert("contains charactor that can not be used.");
+						fillTextArea.focus();
+						return false;
+					}
+				}
+			}
+		}
+
+		return true;
+	}
+
+	/***/
+	function inputCheckFillLabelFields() {
+		const fillLabelNum = $('#fillLabel_num_0').val();
+		if (fillLabelNum && fillLabelNum > 0) {
+			for (let fi = 0; fi < fillLabelNum; fi++) {
+				const fillLabelArea = $('#fillLabel_comment_0_' + fi);
+				if (fillLabelArea.get(0)) {
+					if (fillLabelArea.val().trim() == '') {
+						const fillLabelRequired = $('#fillLabel_isRequired_0_' + fi);
+						if (fillLabelRequired.get(0) && fillLabelRequired.val() != '1') {
+							//
+							continue;
+						}
+
+						//
+						alert("fill fileld is empty.");
+						fillLabelArea.focus();
+						return false;
+					} else if (isContainsSurrogatePair(fillLabelArea.val())) {
+						//
+						alert("contains charactor that can not be used.");
+						fillLabelArea.focus();
+						return false;
+					}
+				}
+			}
+		}
+
+		return true;
+	}	
+
+	/**  */
+	function inputCheckFreeTextPlaceHolders() {
+		let isPlaceholderCheckSuccess = true;
+		$('#seal-stamp').children('div.stamp-area').find('input.freetext-signers-guide').each(
+			function(idx, target) {
+				const placeholderText = $(target).val();
+				if (placeholderText.trim() != "" && isContainsSurrogatePair(placeholderText)) {
+					alert("contains charactor that can not be used.");
+
+					isPlaceholderCheckSuccess = false;
+					$(target).parents('div.text-drag').focus();
+					return false;
+				}
+			}
+		);
+
+		if (isPlaceholderCheckSuccess == false) {
+			return false;
+		}
+
+		return true;
+	}
+
+	$(function() {
+				
+		$("#submitButton").bind("click", function() {
+			var signerArr = [];
+			var signBoxLength = document.getElementsByClassName("stamp-drag");
+			//alert(signBoxLength[0].style.top);
+			for(var i=0;i<signBoxLength.length;i++){
+			var signerJson = {};
+			//alert(signBoxLength[i].style.top.replace("px",""));
+			//alert(signBoxLength[i].id);
+			var signerBoxDiv = signBoxLength[i].id.split("_");
+			//var fCall = new Documents();
+			//fCall.computeForPdfNew(signerBoxDiv[0],signerBoxDiv[1], signerBoxDiv[2]);
+
+			//alert(signerBoxDiv[0]);
+			//alert(signerBoxDiv[1]);
+			//alert(signerBoxDiv[2]);
+			//alert(document.getElementById(signerBoxDiv[0] + "_x1_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value);
+			//alert(document.getElementById(signerBoxDiv[0] + "_y1_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value);
+			//alert(document.getElementById(signerBoxDiv[0] + "_x2_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value);
+			//alert(document.getElementById(signerBoxDiv[0] + "_y2_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value);
+			//alert(document.getElementById(signerBoxDiv[0] + "_page_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value);
+			signerJson["positionTop"] = signBoxLength[i].style.top.replace("px","");
+			signerJson["positionLeft"] = signBoxLength[i].style.left.replace("px","");
+			/**signerJson["positionX1"] = document.getElementById(signerBoxDiv[0] + "_x1_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value;
+			signerJson["positionY1"] = document.getElementById(signerBoxDiv[0] + "_y1_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value;
+			signerJson["positionX2"] = document.getElementById(signerBoxDiv[0] + "_x2_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value;
+			signerJson["positionY2"] = document.getElementById(signerBoxDiv[0] + "_y2_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value;
+			signerJson["pageNumber"] = document.getElementById(signerBoxDiv[0] + "_page_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value;**/
+
+			var page = document.getElementById(signerBoxDiv[0] + "_page_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value;;
+			var pdfHeight = $("#pdfImage" + page).height();
+			var pdfWidth = $("#pdfImage" + page).width();
+			var pdfMagine = 0 * 2;
+			pdfHeight -= (parseFloat(pdfMagine) * 2);
+			pdfWidth -= (parseFloat(pdfMagine) * 2);
+			signerJson["signing_point_start_x"] = Math.round(document.getElementById(signerBoxDiv[0] + "_x1_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value/pdfWidth*100);
+			signerJson["signing_point_start_y"] = 100 - Math.round(document.getElementById(signerBoxDiv[0] + "_y2_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value/pdfHeight*100);
+			signerJson["signing_point_end_x"] = Math.round(document.getElementById(signerBoxDiv[0] + "_x2_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value/pdfWidth*100);
+			signerJson["signing_point_end_y"] = 100 - Math.round(document.getElementById(signerBoxDiv[0] + "_y1_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value/pdfHeight*100);
+			signerJson["page_no"] = document.getElementById(signerBoxDiv[0] + "_page_" + signerBoxDiv[1] + "_" + signerBoxDiv[2]).value;
+			signerJson["signorder"]= "";
+			signerArr.push(signerJson);
+			}
+			signerArr.sort(function (x, y) {
+			var n = x.positionTop - y.positionTop;
+			if (n != 0) {
+			return n;
+			}
+
+			return x.positionLeft - y.positionLeft;
+			});
+			document.getElementById("posArr").value = JSON.stringify(signerArr);
+			//alert(JSON.stringify(signerArr));
+
+			//saveDataThroughServeltInDataBase(signerArr);
+
+			});
+
+		/*$("#submitButton").bind("click", function() {
+			if(isBulkRequestSign) {
+				//
+				if (inputCheckFillTextFields() == false) {
+					return false;
+				}
+
+				//
+				//
+
+				// 
+				if (inputCheckFreeTextPlaceHolders() == false) {
+					return false;
+				}
+
+				var target_str = new Date().toString() + "target";
+				window.open('',target_str, 'width=1200,height=600,scrollbars=yes');
+//				$("#bulkRegist").attr("method", "POST");
+//				$("#bulkRegist").attr("target", target_str);
+//				$("#bulkRegist").attr("action", "process");
+//				$("#bulkRegist").submit();
+				var form = $("form")[0];
+				var flg = true;
+				$.each(fieldArray, function(key, value) {
+					if (!value.compute()) {
+						flg = false;
+					}
+				});
+				if (!flg) {
+					return false;
+				}
+				form.action = "/documents/process";
+				form.target = target_str;
+				form.submit();
+
+				$("#toIndex").attr("action", "/top/");
+//				$("#toIndex").attr("action", "index");
+//				$("#toIndex").attr("method", "GET");
+				$("#toIndex").submit();
+			}else {
+				var form = $("form")[0];
+
+				//
+				if (inputCheckFillTextFields() == false) {
+					return false;
+				}
+
+				//
+				if (inputCheckFillLabelFields() == false) {
+					return false;
+				}
+
+				// 
+				if (inputCheckFreeTextPlaceHolders() == false) {
+					return false;
+				}
+
+//	 			var flg = doc.compute();
+				var flg = true;
+				$.each(fieldArray, function(key, value) {
+					if (!value.compute()) {
+						flg = false;
+					}
+				});
+				if (!flg) {
+					return false;
+				}
+				$('input[type=submit]').prop('disabled', true);
+				$('input[type=button]').prop('disabled', true);
+				form.action = "/documents/registerComplete";
+				startLoading(true, null);
+				setTimeout(function() {
+					form.submit();
+		        }, 130);
+				return false;
+			}
+		});*/
+		$("#back").bind("click", function() {
+			const form = $("form")[0];
+			form.action = "/documents/registerInfo";
+			form.submit();
+			return false;
+		});
+		setTimeout(function () {
+			if (checkPdfImagesLoaded()) {
+				return;
+			}
+			pdfImagesLoadingTimedOut = true;
+			alert('Processing was interrupted because it took too long to load the page. Please go back to the previous screen and try again.');
+		}, (60/*秒*/ * 30/*分*/ * 1000/*ミリ秒単位*/));
+	});
+	
+	// addEventListener support for IE8
+	function bindEvent(element, eventName, eventHandler) {
+	if (element.addEventListener) {
+	element.addEventListener(eventName, eventHandler, false);
+	} else if (element.attachEvent) {
+	element.attachEvent('on' + eventName, eventHandler);
+	}
+	}
+	// Listen to messages from parent window
+	bindEvent(window, 'message', function (e) {
+	//alert(e.data);
+	//results.innerHTML = e.data;
+	myTimer(JSON.parse(e.data));
+	});
+	
+</script>
+
+
+</body></html>

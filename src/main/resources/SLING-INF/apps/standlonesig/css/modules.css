@@ -1,0 +1,328 @@
+@charset "UTF-8";
+
+/* CNDOOR CSS FORMAT */
+
+
+/*フォント設定*/
+
+.fs10 { font-size: 10px ; }
+.fs12 { font-size: 12px ; }
+.fs14 { font-size: 14px ; }
+.fs16 { font-size: 16px ; }
+.fs18 { font-size: 18px ; }
+.fs20 { font-size: 20px ; }
+.fs22 { font-size: 22px ; }
+.fs24 { font-size: 24px ; }
+.fs26 { font-size: 26px ; }
+
+.fwb { font-weight: bold ; } /* 太字 */
+.fwn { font-weight: normal ; } /* 細字 */
+
+.ffm { font-family: monospace ; } /* 等幅 */
+
+.fsn { font-style: normal ; } /* 標準 */
+.fsi { font-style: italic ; } /* イタリック */
+.fso { font-style: oblique ; } /* 斜体 */
+
+
+/*フォント改行スペース*/
+
+.l100 { line-height: 1 ; } /* 100% */
+.l120 { line-height: 1.2 ; } /* 120% */
+.l130 { line-height: 1.3 ; } /* 130% */
+.l140 { line-height: 1.4 ; } /* 140% */
+.l150 { line-height: 1.5 ; } /* 150% */
+.l160 { line-height: 1.6 ; } /* 160% */
+.l170 { line-height: 1.7 ; } /* 170% */
+.l180 { line-height: 1.8 ; } /* 180% */
+.l200 { line-height: 2 ; } /* 200% */
+.l250 { line-height: 2.5 ; } /* 250% */
+.l300 { line-height: 3 ; } /* 300% */
+
+
+/*テキスト位置*/
+
+.tl,
+.tl th,
+.tl td { text-align: left !important ; } /*左*/
+.tr,
+.tr th,
+.tr td { text-align: right !important ; } /*右*/
+.tc,
+.tc th,
+.tc td { text-align: center !important ; } /*中央*/
+
+
+/*上下寄せ*/
+
+.vt,
+.vt img,
+.vt th,
+.vt td { vertical-align: top !important ; } /* 上寄せ */
+.vm,
+.vm img,
+.vm th,
+.vm td { vertical-align: middle !important ; } /* 中央寄せ */
+.vb,
+.vb img,
+.vb th,
+.vb td { vertical-align: bottom !important ; } /* 下寄せ */
+
+
+/*floatとクリア*/
+
+.fl { float: left ; } /*左回り込み*/
+.fr { float: right ; } /*右回り込み*/
+.cb { clear: both ; } /*解除*/
+/*brなどの空要素を入れずにfloatの回り込みを解除する指定(親要素にfcbと指定)*/
+.fcb {
+	display: inline-block ;
+}
+.fcb:after {
+	content: "." ;
+	font-size: 0.0em ;
+	line-height: 0 ;
+	display: block ;
+	height: 0 ;
+	visibility: hidden ;
+	clear: both ;
+}
+/* \*/
+* html .fcb {
+    height: 1% ;
+}
+.fcb {
+    display: block ;
+}
+/* */
+
+
+/*横幅パーセンテージ*/
+
+.w1 { width: 1% ; }
+.w2 { width: 2% ; }
+.w3 { width: 3% ; }
+.w4 { width: 4% ; }
+.w5 { width: 5% ; }
+.w6 { width: 6% ; }
+.w7 { width: 7% ; }
+.w8 { width: 8% ; }
+.w9 { width: 9% ; }
+.w10 { width: 10% ; }
+.w11 { width: 11% ; }
+.w12 { width: 12% ; }
+.w13 { width: 13% ; }
+.w14 { width: 14% ; }
+.w15 { width: 15% ; }
+.w16 { width: 16% ; }
+.w17 { width: 17% ; }
+.w18 { width: 18% ; }
+.w19 { width: 19% ; }
+.w20 { width: 20% ; }
+.w21 { width: 21% ; }
+.w22 { width: 22% ; }
+.w23 { width: 23% ; }
+.w24 { width: 24% ; }
+.w25 { width: 25% ; }
+.w26 { width: 26% ; }
+.w27 { width: 27% ; }
+.w28 { width: 28% ; }
+.w29 { width: 29% ; }
+.w30 { width: 30% ; }
+.w31 { width: 31% ; }
+.w32 { width: 32% ; }
+.w33 { width: 33% ; }
+.w34 { width: 34% ; }
+.w35 { width: 35% ; }
+.w36 { width: 36% ; }
+.w37 { width: 37% ; }
+.w38 { width: 38% ; }
+.w39 { width: 39% ; }
+.w40 { width: 40% ; }
+.w41 { width: 41% ; }
+.w42 { width: 42% ; }
+.w43 { width: 43% ; }
+.w44 { width: 44% ; }
+.w45 { width: 45% ; }
+.w46 { width: 46% ; }
+.w47 { width: 47% ; }
+.w48 { width: 48% ; }
+.w49 { width: 49% ; }
+.w50 { width: 50% ; }
+.w51 { width: 51% ; }
+.w52 { width: 52% ; }
+.w53 { width: 53% ; }
+.w54 { width: 54% ; }
+.w55 { width: 55% ; }
+.w56 { width: 56% ; }
+.w57 { width: 57% ; }
+.w58 { width: 58% ; }
+.w59 { width: 59% ; }
+.w60 { width: 60% ; }
+.w61 { width: 61% ; }
+.w62 { width: 62% ; }
+.w63 { width: 63% ; }
+.w64 { width: 64% ; }
+.w65 { width: 65% ; }
+.w66 { width: 66% ; }
+.w67 { width: 67% ; }
+.w68 { width: 68% ; }
+.w69 { width: 69% ; }
+.w70 { width: 70% ; }
+.w71 { width: 71% ; }
+.w72 { width: 72% ; }
+.w73 { width: 73% ; }
+.w74 { width: 74% ; }
+.w75 { width: 75% ; }
+.w76 { width: 76% ; }
+.w77 { width: 77% ; }
+.w78 { width: 78% ; }
+.w79 { width: 79% ; }
+.w80 { width: 80% ; }
+.w81 { width: 81% ; }
+.w82 { width: 82% ; }
+.w83 { width: 83% ; }
+.w84 { width: 84% ; }
+.w85 { width: 85% ; }
+.w86 { width: 86% ; }
+.w87 { width: 87% ; }
+.w88 { width: 88% ; }
+.w89 { width: 89% ; }
+.w90 { width: 90% ; }
+.w91 { width: 91% ; }
+.w92 { width: 92% ; }
+.w93 { width: 93% ; }
+.w94 { width: 94% ; }
+.w95 { width: 95% ; }
+.w96 { width: 96% ; }
+.w97 { width: 97% ; }
+.w98 { width: 98% ; }
+.w99 { width: 99% ; }
+.w100 { width: 100% ; }
+
+
+/*横幅*/
+
+.wp0 { width: 0px ; }
+.wp50 { width: 50px ; }
+.wp80 { width: 80px ; }
+.wp100 { width: 100px ; }
+.wp110 { width: 110px ; }
+.wp120 { width: 120px ; }
+.wp130 { width: 130px ; }
+.wp140 { width: 140px ; }
+.wp150 { width: 150px ; }
+.wp160 { width: 160px ; }
+.wp170 { width: 170px ; }
+.wp180 { width: 180px ; }
+.wp190 { width: 190px ; }
+.wp200 { width: 200px ; }
+.wp210 { width: 210px ; }
+.wp220 { width: 220px ; }
+.wp230 { width: 230px ; }
+.wp240 { width: 240px ; }
+.wp250 { width: 250px ; }
+.wp260 { width: 260px ; }
+.wp270 { width: 270px ; }
+.wp280 { width: 280px ; }
+.wp290 { width: 290px ; }
+.wp300 { width: 300px ; }
+.wp310 { width: 310px ; }
+.wp320 { width: 320px ; }
+.wp330 { width: 330px ; }
+.wp340 { width: 340px ; }
+.wp350 { width: 350px ; }
+.wp360 { width: 360px ; }
+.wp370 { width: 370px ; }
+.wp380 { width: 380px ; }
+.wp390 { width: 390px ; }
+.wp400 { width: 400px ; }
+.wp410 { width: 410px ; }
+.wp420 { width: 420px ; }
+.wp430 { width: 430px ; }
+.wp440 { width: 440px ; }
+.wp450 { width: 450px ; }
+.wp460 { width: 460px ; }
+.wp470 { width: 470px ; }
+.wp480 { width: 480px ; }
+.wp490 { width: 490px ; }
+.wp500 { width: 500px ; }
+.wp510 { width: 510px ; }
+.wp520 { width: 520px ; }
+.wp530 { width: 530px ; }
+.wp540 { width: 540px ; }
+.wp550 { width: 550px ; }
+.wp560 { width: 560px ; }
+.wp570 { width: 570px ; }
+.wp580 { width: 580px ; }
+.wp590 { width: 590px ; }
+.wp600 { width: 600px ; }
+
+
+/*各上下左右マージン指定*/
+
+.tp0 { margin-top: 0px !important ; }
+.tp5 { margin-top: 5px !important ; }
+.tp10 { margin-top: 10px !important ; }
+.tp15 { margin-top: 15px !important ; }
+.tp20 { margin-top: 20px !important ; }
+.tp25 { margin-top: 25px !important ; }
+.tp30 { margin-top: 30px !important ; }
+.tp35 { margin-top: 35px !important ; }
+.tp40 { margin-top: 40px !important ; }
+.tp45 { margin-top: 45px !important ; }
+.tp50 { margin-top: 50px !important ; }
+.tp60 { margin-top: 60px !important ; }
+.tp70 { margin-top: 70px !important ; }
+.tp80 { margin-top: 80px !important ; }
+.tp90 { margin-top: 90px !important ; }
+.tp100 { margin-top: 100px !important ; }
+.bp0 { margin-bottom: 0px !important ; }
+.bp5 { margin-bottom: 5px !important ; }
+.bp10 { margin-bottom: 10px !important ; }
+.bp15 { margin-bottom: 15px !important ; }
+.bp20 { margin-bottom: 20px !important ; }
+.bp25 { margin-bottom: 25px !important ; }
+.bp30 { margin-bottom: 30px !important ; }
+.bp35 { margin-bottom: 35px !important ; }
+.bp40 { margin-bottom: 40px !important ; }
+.bp45 { margin-bottom: 45px !important ; }
+.bp50 { margin-bottom: 50px !important ; }
+.bp60 { margin-bottom: 60px !important ; }
+.bp70 { margin-bottom: 70px !important ; }
+.bp80 { margin-bottom: 80px !important ; }
+.bp90 { margin-bottom: 90px !important ; }
+.bp100 { margin-bottom: 100px !important ; }
+.lp0 { margin-left: 0px !important ; }
+.lp5 { margin-left: 5px !important ; }
+.lp10 { margin-left: 10px !important ; }
+.lp15 { margin-left: 15px !important ; }
+.lp20 { margin-left: 20px !important ; }
+.lp25 { margin-left: 25px !important ; }
+.lp30 { margin-left: 30px !important ; }
+.lp35 { margin-left: 35px !important ; }
+.lp40 { margin-left: 40px !important ; }
+.lp45 { margin-left: 45px !important ; }
+.lp50 { margin-left: 50px !important ; }
+.lp60 { margin-left: 60px !important ; }
+.lp70 { margin-left: 70px !important ; }
+.lp80 { margin-left: 80px !important ; }
+.lp90 { margin-left: 90px !important ; }
+.lp100 { margin-left: 100px !important ; }
+.rp0 { margin-right: 0px !important ; }
+.rp5 { margin-right: 5px !important ; }
+.rp10 { margin-right: 10px !important ; }
+.rp12 { margin-right: 12px !important ; }
+.rp15 { margin-right: 15px !important ; }
+.rp20 { margin-right: 20px !important ; }
+.rp25 { margin-right: 25px !important ; }
+.rp30 { margin-right: 30px !important ; }
+.rp35 { margin-right: 35px !important ; }
+.rp40 { margin-right: 40px !important ; }
+.rp45 { margin-right: 45px !important ; }
+.rp50 { margin-right: 50px !important ; }
+.rp60 { margin-right: 60px !important ; }
+.rp70 { margin-right: 70px !important ; }
+.rp80 { margin-right: 80px !important ; }
+.rp90 { margin-right: 90px !important ; }
+.rp100 { margin-right: 100px !important ; }
